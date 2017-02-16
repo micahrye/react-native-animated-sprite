@@ -2,8 +2,7 @@
 
 react-native-animated-sprite (RNAS) package is a feature rich declarative component for animation, tweening, and dragging sprites. Animation is achieved using frame-by-frame animation, tweening uses the React Native Animated class, and dragging uses React Native PanResponder.
 
-RNAS is ideal for use in general applications or games. Original development was for inclusion in games.
-
+RNAS is ideal for use in general applications or games. Development has been driven by [Curious Learning's](http://www.curiouslearning.org/) work in cognitive assessment and literacy.
 
 ## Installation
 ```
@@ -26,6 +25,9 @@ information. See "example/sprites/monster/monsterSprite.js"
 ### Tweens
 Tweens ("src/Tweens/Tweens.js") operate on AnimatedSprites to enable tweening.
 
+### Example Use
+![](https://raw.githubusercontent.com/micahrye/react-native-animated-sprite/master/example/AnimateSpriteExample.gif =265x400)
+
 ### Example Declaration
 ```
 <AnimatedSprite
@@ -40,11 +42,7 @@ Tweens ("src/Tweens/Tweens.js") operate on AnimatedSprites to enable tweening.
   draggable={true}
 />
 ```
-The above example creates an "AnimatedSprite" with the "monsterSprite." The
-animation loops and the animation is of the monster "walking". The coordinates
-place the start location of the AnimatedSprite, while size declares the size.
-Draggable set to true (draggable={true}) means that the AnimatedSprite can
-be dragged.
+The above example would create an "AnimatedSprite" with the "monsterSprite." The animation loops and the animation is of the monster "walking". The coordinates place the start location of the AnimatedSprite, while size declares the size. Draggable set to true (draggable={true}) means that the AnimatedSprite can be dragged.
 
 ## Component Properties
 
@@ -76,9 +74,10 @@ be dragged.
 | fps | false | number | sprite is the | 10 |
 
 
-## Usage
+## Example Projects
+**coming soon**
+
+Add yours :D
 
 ## Notes on Usage
 Mobile operating systems such as Android and iOS have significantly less application memory then other systems. As a result performance can be effected by the size and number of images used by an application using AnimatedSprite.
-
-## Example Projects
