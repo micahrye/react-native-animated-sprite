@@ -133,9 +133,8 @@ class AnimatedSprite extends React.Component {
     this.previousLeft += gestureState.dx;
     this.previousTop += gestureState.dy;
     // PanResponder mutates state directly
-    this.state.top = this.spriteStyles.style.top;
-    this.state.left = this.spriteStyles.style.left;
-
+    this.state.top._value = this.spriteStyles.style.top;
+    this.state.left._value = this.spriteStyles.style.left;
     if (this.props.currentLocation) {
       this.props.currentLocation(this.spriteStyles.style.left, this.spriteStyles.style.top);
     }
