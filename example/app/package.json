@@ -19,5 +19,7 @@
   },
   "jest": {
     "preset": "react-native"
-  }
+  },
+  "author": "rye",
+  "license": "MIT"
 }
