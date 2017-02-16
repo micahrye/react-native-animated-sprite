@@ -26,7 +26,7 @@ information. See "example/sprites/monster/monsterSprite.js"
 Tweens ("src/Tweens/Tweens.js") operate on AnimatedSprites to enable tweening.
 
 ### Example Use
-![](./example/AnimateSpriteExample.gif =265x400)
+<img src="./example/AnimateSpriteExample.gif" width="265" height="400">
 
 ### Example Declaration
 ```
