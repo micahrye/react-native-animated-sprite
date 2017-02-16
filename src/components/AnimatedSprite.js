@@ -118,10 +118,6 @@ class AnimatedSprite extends React.Component {
     return true;
   }
 
-  handlePanResponderGrant (/*e, gestureState*/) {
-    // do something on grant
-  }
-
   handlePanResponderMove (e, gestureState) {
     this.spriteStyles.style.left = this.previousLeft + gestureState.dx;
     this.spriteStyles.style.top = this.previousTop + gestureState.dy;
