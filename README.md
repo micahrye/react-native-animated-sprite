@@ -26,7 +26,7 @@ information. See "example/sprites/monster/monsterSprite.js"
 Tweens ("src/Tweens/Tweens.js") operate on AnimatedSprites to enable tweening.
 
 ### Example Use
-<img src="./example/AnimateSpriteExample.gif" width="265" height="400">
+<img src="https://raw.githubusercontent.com/micahrye/react-native-animated-sprite/master/example/AnimateSpriteExample.gif" width="265" height="400">
 
 ### Example Declaration
 ```
