@@ -1,7 +1,6 @@
 {
   "name": "AnimatedSpriteExample",
-  "version": "0.0.1",
-  "private": true,
+  "version": "1.0.0",
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest"
