@@ -189,6 +189,10 @@ class AnimatedSprite extends React.Component {
     );
   }
 
+  getCoordinates () {
+    return { top: this.state.top._value, left: this.state.left._value};
+  }
+
   handlePress (e) {
     e.preventDefault();
     if (this.props.onPress) {
