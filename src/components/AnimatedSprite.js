@@ -223,11 +223,11 @@ class AnimatedSprite extends React.Component {
   }
 
   getStyle () {
-    const opacity = !this.props.visable ? new Animated.Value(0) : this.state.opacity;
+    const opacity = !this.props.visible ? new Animated.Value(0) : this.state.opacity;
     const rotateAxes = _.map(this.state.rotate, axis => axis);
     const transform = _.concat([{scale: this.state.scale}], rotateAxes);
     return (
-      // TODO: this.props.visable part of hack to what may be a
+      // TODO: this.props.visible part of hack to what may be a
       // RN bug associated with premiture stopping of Tween and removing
       // The related component
       {
@@ -279,10 +279,11 @@ AnimatedSprite.propTypes = {
     width: React.PropTypes.number,
     height: React.PropTypes.number,
   }).isRequired,
+  animationFrameIndex: React.PropTypes.array.isRequired,
+
   rotate: React.PropTypes.arrayOf(React.PropTypes.object),
   scale: React.PropTypes.number,
   opacity: React.PropTypes.number,
-  animationFrameIndex: React.PropTypes.array.isRequired,
   spriteUID: React.PropTypes.string,
   draggable: React.PropTypes.bool,
   onPress: React.PropTypes.func,
@@ -299,7 +300,7 @@ AnimatedSprite.propTypes = {
   onTweenStopped: React.PropTypes.func,
   onTweenFinish: React.PropTypes.func,
   onAnimationFinish: React.PropTypes.func,
-  visable: React.PropTypes.bool,
+  visible: React.PropTypes.bool,
   fps: React.PropTypes.number,
 };
 
@@ -310,7 +311,7 @@ AnimatedSprite.defaultProps = {
   scale: 1,
   opacity: 1,
   fps: 10,
-  visable: true,
+  visible: true,
 };
 
 export default AnimatedSprite;
