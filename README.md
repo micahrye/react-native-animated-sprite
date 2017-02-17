@@ -44,7 +44,7 @@ Tweens ("src/Tweens/Tweens.js") operate on AnimatedSprites to enable tweening.
 ```
 The above example would create an "AnimatedSprite" with the "monsterSprite." The animation loops and the animation is of the monster "walking". The coordinates place the start location of the AnimatedSprite, while size declares the size. Draggable set to true (draggable={true}) means that the AnimatedSprite can be dragged.
 
-## Component Properties
+## Component Properties (need to finish)
 
 | Name | Required | Type |  Description | Default Value |
 |------|----------|------|-------------|---------------|
@@ -73,6 +73,8 @@ The above example would create an "AnimatedSprite" with the "monsterSprite." The
 | visible | false | bool | sprite is the | true |
 | fps | false | number | sprite is the | 10 |
 
+## Use of Refs to Access AnimatedSprite Methods
+(add description) 
 
 ## Example Projects
 **coming soon**
