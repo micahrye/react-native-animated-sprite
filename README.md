@@ -80,7 +80,7 @@ See [the code](https://github.com/micahrye/react-native-animated-sprite/blob/mas
 | timeSinceMounted | false | func | Indicates time since component was mounted | none |
 | currentLocation | false | func | Function to retrieve current coordinates. | none |
 | tweenStart | false | string | Indicates how tween should start, one of ['fromMethod', 'fromPress', 'fromMount'] | none |
-| tweenOptions | false | object | Describes tween options. | See [Tweens](#tween-overview) |
+| tweenOptions | false | object | Describes tween options. | See [Tweens](#tweens-overview) |
 | stopAutoTweenOnPressIn | false | bool | Indicates if tween started at component mount should stop on press event. | none |
 | onTweenStopped | false | func | Function handle called when tween stopped by press event. | none |
 | onTweenFinish | false | func | Function handle called when tween completes full tween. | none |
