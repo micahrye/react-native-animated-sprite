@@ -64,7 +64,7 @@ See [the code](https://github.com/micahrye/react-native-animated-sprite/blob/mas
 
 | Name | Required | Type |  Description | Default Value |
 |------|----------|------|-------------|---------------|
-| sprite | true | object | An object that describes the underlying sprite asset. | See [Sprite fields](#fprite-fields) below. |
+| sprite | true | object | An object that describes the underlying sprite asset. | See [Sprite fields](#sprite-fields) below. |
 | coordinates | true | object | The top/left coordinates of the AnimatedSprite. | none |
 | size | true | object | The width/height size of the sprite assets. | none |
 | animationFrameIndex | true | array | The indices of the current animation. | none |
@@ -80,7 +80,7 @@ See [the code](https://github.com/micahrye/react-native-animated-sprite/blob/mas
 | timeSinceMounted | false | func | Indicates time since component was mounted | none |
 | currentLocation | false | func | Function to retrieve current coordinates. | none |
 | tweenStart | false | string | Indicates how tween should start, one of ['fromMethod', 'fromPress', 'fromMount'] | none |
-| tweenOptions | false | object | Describes tween options. | See [Tweens](#tweens) |
+| tweenOptions | false | object | Describes tween options. | See [Tweens](#tween-overview) |
 | stopAutoTweenOnPressIn | false | bool | Indicates if tween started at component mount should stop on press event. | none |
 | onTweenStopped | false | func | Function handle called when tween stopped by press event. | none |
 | onTweenFinish | false | func | Function handle called when tween completes full tween. | none |
@@ -117,7 +117,7 @@ const coords = this.refs.monsterRef.getCoordinates();
 Sprites and tweens are key aspects of the AnimatedSprite component. The following
 gives an overview of each.
 
-### Sprites
+### Sprites Overview
 A sprite is an object that contain with the following shape:
 ```
 {
@@ -140,7 +140,7 @@ See [example app](https://github.com/micahrye/react-native-animated-sprite/blob/
   * **animationIndex**: Is a function that should return the array indices from "frames" for
   a given animation type defined in "animationTypes".
 
-### Tweens
+### Tweens Overview
 Tweens.js contains many tween objects that can be used by AnimatedSprite for creating
 tweening effects. Tweens.js defines "high" level tweens, such as "zoomIntoExistence"
 and "wiggle," which can be used by AnimatedSprite. AnimatedSprite can take "tweenOptions,"
