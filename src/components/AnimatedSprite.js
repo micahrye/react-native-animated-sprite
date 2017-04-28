@@ -83,8 +83,6 @@ class AnimatedSprite extends React.Component {
     this.panResponder = PanResponder.create({
       onStartShouldSetPanResponder: () => true,
       onMoveShouldSetPanResponder: () => true,
-      onPanResponderGrant:(e, gestureState) => {
-        this.handlePanResponderGrant(e, gestureState);},
       onPanResponderMove: (e, gestureState) => {
         this.handlePanResponderMove(e, gestureState);},
       onPanResponderRelease: (e, gestureState) => {
