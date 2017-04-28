@@ -63,12 +63,6 @@ class AnimatedSprite extends React.Component {
     this.fps = this.props.fps || this.fps;
   }
 
-  componentWillReceiveProps (nextProps) {
-    if (this.props.animationFrameIndex !== nextProps.animationFrameIndex) {
-      this.startAnimation();
-    }
-  }
-
   shouldComponentUpdate (nextProps, nextState) {
      return shallowCompare(this, nextProps, nextState);
   }
@@ -133,14 +127,18 @@ class AnimatedSprite extends React.Component {
       this.props.currentLocation(this.spriteStyles.style.left, this.spriteStyles.style.top);
     }
   }
-
+  
+  animationSequenceComplete(frameIndex) {
+    return (frameIndex > (this.props.animationFrameIndex.length - 1));
+  }
+  
   startAnimation () {
     this.fps = this.props.fps || this.fps;
     this.frameIndex = -1;
     clearInterval(this.defaultAnimationInterval);
     this.defaultAnimationInterval = setInterval(()=>{
       this.frameIndex++;
-      if (this.frameIndex > (this.props.animationFrameIndex.length - 1)) {
+      if (this.animationSequenceComplete(this.frameIndex)) {
         this.frameIndex = this.frameIndex - 1;
         if (this.props.loopAnimation) {
             this.frameIndex = 0;
