@@ -47,15 +47,17 @@ Github [repo](https://github.com/micahrye/react-native-animated-sprite/blob/mast
     top: 100,
     left: 100,
   }}
-  size={monsterSprite.size}
-  scale={1.65}
+  size={{
+    width: monsterSprite.size.width * 1.65,
+    height: monsterSprite.size.height * 1.65,
+  }}
   draggable={true}
   tweenOptions = {this.state.tweenOptions}
   tweenStart={'fromMethod'}
   onPress={() => {this.onPress();}}
 />
 ```
-The above example would create an "AnimatedSprite" with the "monsterSprite." The animation loops and is set to an animation type of the sprite. The coordinates place the start location of the AnimatedSprite, while size declares the size, and scale its scale. Draggable set to true (draggable={true}) means that the AnimatedSprite can be dragged. The tween options are
+The above example would create an "AnimatedSprite" with the "monsterSprite." The animation loops and is set to an animation type of the sprite. The coordinates place the start location of the AnimatedSprite, while size declares the size. Draggable set to true (draggable={true}) means that the AnimatedSprite can be dragged. The tween options are
 set to a tween object, and the tween can be started 'fromCode', i.e. programmatically.
 There is also an "onPress" handler declared that is used to switch animation type.
 See [the code](https://github.com/micahrye/react-native-animated-sprite/blob/master/example/app/index.android.js) for full details.
@@ -69,7 +71,6 @@ See [the code](https://github.com/micahrye/react-native-animated-sprite/blob/mas
 | size | true | object | The width/height size of the sprite assets. | none |
 | animationFrameIndex | true | array | The indices of the current animation. | none |
 | rotate | false | array | Rotation information for sprite. | [{rotateY: '0deg'}] |
-| scale | false | number | Scale factor, affects size of sprite. | 1 |
 | opacity | false | number | Opacity of sprite. | 1 |
 | spriteUID | false | string | Unique string used for ID purposes. | randome string of length 7 |
 | draggable | false | bool | Set draggable state of sprite. | false |
