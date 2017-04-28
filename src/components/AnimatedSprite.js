@@ -20,7 +20,7 @@ class AnimatedSprite extends React.Component {
     this.state = {
       top: new Animated.Value(props.coordinates.top),
       left: new Animated.Value(props.coordinates.left),
-      scale: new Animated.Value(props.scale),
+      scale: new Animated.Value(1),
       opacity: new Animated.Value(props.opacity),
       width: props.size.width,
       height: props.size.height,
@@ -281,7 +281,6 @@ AnimatedSprite.propTypes = {
   animationFrameIndex: React.PropTypes.array.isRequired,
 
   rotate: React.PropTypes.arrayOf(React.PropTypes.object),
-  scale: React.PropTypes.number,
   opacity: React.PropTypes.number,
   spriteUID: React.PropTypes.string,
   draggable: React.PropTypes.bool,
@@ -307,7 +306,6 @@ AnimatedSprite.defaultProps = {
   draggable: false,
   spriteUID: randomstring({ length: 7 }),
   rotate: [{rotateY: '0deg'}],
-  scale: 1,
   opacity: 1,
   fps: 10,
   visible: true,

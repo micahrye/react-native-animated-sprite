@@ -1,6 +1,6 @@
 {
   "name": "react-native-animated-sprite",
-  "version": "0.9.10",
+  "version": "0.10.0",
   "description": "The React Native Animated Sprite package is a feature rich declaritive component for animation, tweening, and dragging sprites.",
   "main": "index.js",
   "scripts": {
@@ -16,6 +16,7 @@
     "mobile",
     "android",
     "ios",
+    "games",
     "animation",
     "tween"
   ],

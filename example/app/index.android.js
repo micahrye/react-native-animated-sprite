@@ -61,8 +61,10 @@ export default class AnimatedSpriteExample extends Component {
             top: 100,
             left: 100,
           }}
-          size={monsterSprite.size}
-          scale={1.65}
+          size={{
+            width: monsterSprite.size.width * 1.65,
+            height: monsterSprite.size.height * 1.65,
+          }}
           draggable={true}
           tweenOptions = {this.state.tweenOptions}
           tweenStart={'fromMethod'}
