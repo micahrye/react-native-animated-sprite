@@ -6,16 +6,20 @@
     "test": "jest"
   },
   "dependencies": {
+    "lodash": "^4.17.4",
     "lodash.sample": "^4.2.1",
-    "react": "15.4.2",
-    "react-native": "0.41.0",
+    "prop-types": "^15.5.10",
+    "random-string": "^0.1.2",
+    "react": "^16.0.0-alpha.6",
+    "react-addons-shallow-compare": "^15.5.2",
+    "react-native": "^0.44.0",
     "react-native-animated-sprite": "^0.10.3"
   },
   "devDependencies": {
-    "babel-jest": "18.0.0",
+    "babel-jest": "20.0.0",
     "babel-preset-react-native": "1.9.1",
-    "jest": "18.1.0",
-    "react-test-renderer": "15.4.2"
+    "jest": "20.0.0",
+    "react-test-renderer": "16.0.0-alpha.6"
   },
   "jest": {
     "preset": "react-native"

@@ -56,7 +56,7 @@ export default class AnimatedSpriteExample extends Component {
           ref={'monsterRef'}
           sprite={monsterSprite}
           animationFrameIndex={monsterSprite.animationIndex(this.state.animationType)}
-          loopAnimation={true}
+          loopAnimation={false}
           coordinates={{
             top: 100,
             left: 100,

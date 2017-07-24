@@ -7,6 +7,9 @@ import {
   TouchableOpacity,
   Image,
 } from 'react-native';
+
+import PropTypes from 'prop-types';
+
 import shallowCompare from 'react-addons-shallow-compare';
 import _ from 'lodash';
 import randomstring from 'random-string';
@@ -143,6 +146,7 @@ class AnimatedSprite extends React.Component {
         if (this.props.loopAnimation) {
             this.frameIndex = 0;
         } else {
+          // not looping animation
           clearInterval(this.defaultAnimationInterval);
           if (this.props.onAnimationFinish) {
              this.props.onAnimationFinish(this.props.spriteUID);
@@ -195,7 +199,16 @@ class AnimatedSprite extends React.Component {
   }
 
   stoppedTween (stopValues) {
-    this.props.onTweenStopped(stopValues);
+    if (this.props.onTweenStopped) {
+      this.props.onTweenStopped(stopValues);
+    }
+  }
+  
+  stopTween () {
+    // 
+    const tweenType = this.props.tweenOptions.tweenType;
+    Tweens[tweenType].stop(this.tweenablValues,
+      (stopValues) => this.stoppedTween(stopValues));
   }
 
   handlePressIn () {
@@ -210,8 +223,8 @@ class AnimatedSprite extends React.Component {
     }
   }
 
-  handlePressOut (e) {
-    e.preventDefault();
+  handlePressOut () {
+    // e.preventDefault();
     if (this.props.onPressOut) {
       this.props.onPressOut();
     }
@@ -265,37 +278,37 @@ class AnimatedSprite extends React.Component {
 }
 
 AnimatedSprite.propTypes = {
-  sprite: React.PropTypes.object.isRequired,
-  coordinates: React.PropTypes.shape({
-    top: React.PropTypes.number,
-    left: React.PropTypes.number,
+  sprite: PropTypes.object.isRequired,
+  coordinates: PropTypes.shape({
+    top: PropTypes.number,
+    left: PropTypes.number,
   }).isRequired,
-  size: React.PropTypes.shape({
-    width: React.PropTypes.number,
-    height: React.PropTypes.number,
+  size: PropTypes.shape({
+    width: PropTypes.number,
+    height: PropTypes.number,
   }).isRequired,
-  animationFrameIndex: React.PropTypes.array.isRequired,
+  animationFrameIndex: PropTypes.array.isRequired,
 
-  rotate: React.PropTypes.arrayOf(React.PropTypes.object),
-  opacity: React.PropTypes.number,
-  spriteUID: React.PropTypes.string,
-  draggable: React.PropTypes.bool,
-  onPress: React.PropTypes.func,
-  onPressIn: React.PropTypes.func,
-  onPressOut: React.PropTypes.func,
-  loopAnimation: React.PropTypes.bool,
-  timeSinceMounted: React.PropTypes.func,
-  currentLocation: React.PropTypes.func,
-  tweenStart: React.PropTypes.oneOf(['fromMount','fromMethod', 'fromPress']),
+  rotate: PropTypes.arrayOf(PropTypes.object),
+  opacity: PropTypes.number,
+  spriteUID: PropTypes.string,
+  draggable: PropTypes.bool,
+  onPress: PropTypes.func,
+  onPressIn: PropTypes.func,
+  onPressOut: PropTypes.func,
+  loopAnimation: PropTypes.bool,
+  timeSinceMounted: PropTypes.func,
+  currentLocation: PropTypes.func,
+  tweenStart: PropTypes.oneOf(['fromMount','fromMethod', 'fromPress']),
   // probably should validate tweenOptions, since Tweens.js uses them
   // and expects a certian shape.
-  tweenOptions: React.PropTypes.object,
-  stopAutoTweenOnPressIn: React.PropTypes.bool,
-  onTweenStopped: React.PropTypes.func,
-  onTweenFinish: React.PropTypes.func,
-  onAnimationFinish: React.PropTypes.func,
-  visible: React.PropTypes.bool,
-  fps: React.PropTypes.number,
+  tweenOptions: PropTypes.object,
+  stopAutoTweenOnPressIn: PropTypes.bool,
+  onTweenStopped: PropTypes.func,
+  onTweenFinish: PropTypes.func,
+  onAnimationFinish: PropTypes.func,
+  visible: PropTypes.bool,
+  fps: PropTypes.number,
 };
 
 AnimatedSprite.defaultProps = {
@@ -308,3 +321,4 @@ AnimatedSprite.defaultProps = {
 };
 
 export default AnimatedSprite;
+
