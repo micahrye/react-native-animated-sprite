@@ -54,7 +54,7 @@ export default class AnimatedSpriteExample extends Component {
       <View style={styles.container}>
         <AnimatedSprite
           ref={'monsterRef'}
-          sprite={monsterSprite}
+          sprites={monsterSprite.sprites}
           animationFrameIndex={monsterSprite.animationIndex(this.state.animationType)}
           loopAnimation={false}
           coordinates={{
