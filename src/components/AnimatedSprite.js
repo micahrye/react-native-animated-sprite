@@ -31,7 +31,6 @@ class AnimatedSprite extends React.Component {
       frameIndex: this.props.animationFrameIndex,
     };
 
-    this.sprite = this.props.sprite;
     this.frameIndex = 0;
     this.defaultAnimationInterval = undefined;
     this.fps = 8;
@@ -265,7 +264,7 @@ class AnimatedSprite extends React.Component {
           onPressIn={(evt) => this.handlePressIn(evt)}
           onPressOut={(evt) => this.handlePressOut(evt)}>
           <Image
-            source={this.sprite.frames[this.state.frameIndex]}
+            source={this.props.sprites[this.state.frameIndex]}
             style={{
               width: this.state.width,
               height: this.state.height,
@@ -278,7 +277,7 @@ class AnimatedSprite extends React.Component {
 }
 
 AnimatedSprite.propTypes = {
-  sprite: PropTypes.object.isRequired,
+  sprites: PropTypes.array.isRequired,
   coordinates: PropTypes.shape({
     top: PropTypes.number,
     left: PropTypes.number,
@@ -288,7 +287,6 @@ AnimatedSprite.propTypes = {
     height: PropTypes.number,
   }).isRequired,
   animationFrameIndex: PropTypes.array.isRequired,
-
   rotate: PropTypes.arrayOf(PropTypes.object),
   opacity: PropTypes.number,
   spriteUID: PropTypes.string,
