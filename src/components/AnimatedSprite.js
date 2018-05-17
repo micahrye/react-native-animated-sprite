@@ -66,6 +66,19 @@ class AnimatedSprite extends React.Component {
     this.fps = this.props.fps || this.fps;
   }
 
+  componentWillReceiveProps (newProps) {
+    this.setState({
+      top: new Animated.Value(newProps.coordinates.top),
+      left: new Animated.Value(newProps.coordinates.left),
+      scale: new Animated.Value(1),
+      opacity: new Animated.Value(newProps.opacity),
+      width: newProps.size.width,
+      height: newProps.size.height,
+      rotate: newProps.rotate,
+      frameIndex: newProps.animationFrameIndex
+    });
+  }
+
   shouldComponentUpdate (nextProps, nextState) {
      return shallowCompare(this, nextProps, nextState);
   }
