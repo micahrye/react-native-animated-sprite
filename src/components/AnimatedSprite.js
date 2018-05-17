@@ -74,6 +74,19 @@ class AnimatedSprite extends React.Component {
     clearInterval(this.defaultAnimationInterval);
   }
 
+  componentWillReceiveProps (newProps) {
+    this.setState({
+      top: new Animated.Value(this.props.coordinates.top),
+      left: new Animated.Value(this.props.coordinates.left),
+      scale: new Animated.Value(1),
+      opacity: new Animated.Value(this.props.opacity),
+      width: this.props.size.width,
+      height: this.props.size.height,
+      rotate: this.props.rotate,
+      frameIndex: this.props.animationFrameIndex
+    });
+  }
+
   initPanResponder () {
     // note that with PanResponder we setNativeProps for performance reasons,
     // as stated by FB.
