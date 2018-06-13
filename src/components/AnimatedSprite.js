@@ -266,6 +266,7 @@ class AnimatedSprite extends React.Component {
           onPressOut={(evt) => this.handlePressOut(evt)}>
           <Image
             source={this.sprite.frames[this.state.frameIndex]}
+            fadeDuration={0}
             style={{
               width: this.state.width,
               height: this.state.height,
